@@ -76,7 +76,7 @@ console.log(result)
 });
 
 
-app.post('/update', async (req,res) => {
+app.put('/update', async (req,res) => {
 
 const {name, pop} = req.body
  
@@ -97,7 +97,7 @@ res.json({"status":"failure"})
 
 
 
-app.post('/delete', async (req, res) => {
+app.delete('/delete', async (req, res) => {
 const id = req.body
 
 const result = await knex('city').where({ID: parseInt(id.ID)}).del()
